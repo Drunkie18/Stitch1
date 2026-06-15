@@ -1,0 +1,9 @@
+-- The C compiler identification is Clang 19.0.1
+-- The CXX compiler identification is Clang 19.0.1
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - failed
+-- Check for working C compiler: /home/deb_man/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang
+-- Check for working C compiler: /home/deb_man/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang - broken
+-- Configuring incomplete, errors occurred!
+See also "/home/deb_man/AndroidStudioProjects/Stitch1/opencv/.cxx/Debug/2e5g2e5f/x86/CMakeFiles/CMakeOutput.log".
+See also "/home/deb_man/AndroidStudioProjects/Stitch1/opencv/.cxx/Debug/2e5g2e5f/x86/CMakeFiles/CMakeError.log".

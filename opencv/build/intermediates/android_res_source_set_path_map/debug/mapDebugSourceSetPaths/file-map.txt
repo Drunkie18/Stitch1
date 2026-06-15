@@ -1,0 +1,9 @@
+org.opencv-pngs-0 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/generated/res/pngs/debug
+org.opencv-updated_navigation_xml-1 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/generated/updated_navigation_xml/debug
+org.opencv-mergeDebugResources-2 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/intermediates/incremental/debug/mergeDebugResources/merged.dir
+org.opencv-mergeDebugResources-3 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/intermediates/incremental/debug/mergeDebugResources/stripped.dir
+org.opencv-debug-4 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/intermediates/merged_res/debug/mergeDebugResources
+org.opencv-debug-5 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/build/intermediates/packaged_res/debug/packageDebugResources
+org.opencv-java-6 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/java/res
+org.opencv-debug-7 /home/deb_man/AndroidStudioProjects/Stitch1/opencv/src/debug/res
+gradleHome-0 /home/deb_man/.gradle

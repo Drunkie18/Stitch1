@@ -1,0 +1,22 @@
+CMake Error at /home/deb_man/Android/Sdk/cmake/3.22.1/share/cmake-3.22/Modules/CMakeTestCCompiler.cmake:69 (message):
+  The C compiler
+
+    "/home/deb_man/Android/Sdk/ndk/28.2.13676358/toolchains/llvm/prebuilt/linux-x86_64/bin/clang"
+
+  is not able to compile a simple test program.
+
+  It fails with the following output:
+
+    Change Dir: /home/deb_man/AndroidStudioProjects/Stitch1/opencv/.cxx/Debug/2e5g2e5f/x86/CMakeFiles/CMakeTmp
+    
+    Run Build Command(s):/home/deb_man/Android/Sdk/cmake/3.22.1/bin/ninja cmTC_4cb3e && ninja: error: unknown target 'cmTC_4cb3e'
+    
+    
+
+  
+
+  CMake will not be able to correctly generate this project.
+Call Stack (most recent call first):
+  CMakeLists.txt:3 (project)
+
+
