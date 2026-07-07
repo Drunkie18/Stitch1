@@ -1,6 +1,7 @@
 # Open Photosphere Engine
 
-The end goal: Stitcher is going to be an advanced mobile computer vision library and application built using Kotlin, Native C++ (NDK), and OpenCV. Designed as an open-source alternative to proprietary computational photography pipelines, this engine enables mobile hardware to stitch multiple overlapping images into high-resolution panoramas and complete 360-degree photospheres.
+The end goal: Stitcher is going to be an advanced mobile computer vision library and application built using Kotlin, Native C++ (NDK), and OpenCV. 
+Designed as an open-source alternative to proprietary computational photography pipelines, this engine enables mobile hardware to stitch multiple overlapping images into high-resolution panoramas and complete 360-degree photospheres.
 
 This is mostly to explore and the feature "Photoshphere" found in current pixel camera (on playstore for Androids other than pixel phones strangely) and Gcam modules; in an attempt to improve on stitching ability by potentially using ML in future.
 Starting with Stitch1 - to stitch two photos left and right; moving onto next iteration Stitch2 - dealing with 4 photos UL,UR,LL,LR; and so on and so forth.
@@ -13,24 +14,27 @@ although strangely the feature still seems to be available in the app itself if 
 
 
 
-The project scales iteratively through modular development targets:
-
-* **Stitch1:** Dual-image stitching engine resolving horizontal left-and-right frame alignments.
-* **Stitch2:** Quad-image matrix layout managing quadrant alignments (Upper-Left, Upper-Right, Lower-Left, Lower-Right).
+Project will scale iteratively through modular development targets: **Stitch1:** Stitching for L and R of subject pictures, next Stitch2 stitching for UL, UR, LL, LR for a total of 4 images of a subject, moving onto 9, and then so on and so forth, ultimately ending with...
 * **Photosphere Engine:** Full spherical dome projection handling multi-axis coordinate arrays.
 
 ---
 
-## 📸 Core Concepts: Photosphere vs. Panorama
-
-Understanding how spatial data is gathered from mobile sensors is critical to implementing the correct software pipeline:
+General Idea about how data is gathered and managed via sensors in case of Photosphere and Panorama
 
 * **Traditional Panorama:** Relies on a continuous, low-framerate video stream. Modern variations utilize fast-exposure bracketed frames stitched sequentially as the user pans smoothly across a single horizontal axis.
-* **Photo Sphere:** Originally introduced by Google in 2012, this format relies on a structured, multi-axis spatial grid. Users follow an on-screen "dot-and-circle" guidance system to capture discrete high-resolution stills within a spherical dome. While Google deprecated this native mode in its primary Pixel app in 2023, the underlying spatial metadata framework remains a foundational standard for immersive 360-degree viewing on platforms like Google Photos and VR headsets.
+* **Photo Sphere:** Originally introduced by Google in 2012, this format relies on a structured, multi-axis spatial grid.
+  Users follow an on-screen "dot-and-circle" guidance system to capture discrete high-resolution stills within a spherical dome.
+  While Google deprecated this native mode in its primary Pixel app in 2023, the underlying spatial metadata framework remains a foundational standard for immersive 360-degree viewing on platforms like Google Photos and VR headsets.
 
 ---
+github.com/opencv/opencv/tree/4.12.0
 
-## 🚀 System Architecture & Roadmap
+To get started; enter their github, move to Coding_Stlye_Guide -> Running OpenCV on various platforms -> Custom OpenCV Android SDK and AAR package build which has the necessary instructions to get your build environment started in Android Studio. 
+
+
+
+---
+System Architecture & Roadmap
 
 Heavy mathematical transformations are offloaded to native C++ via the Java Native Interface (JNI). This bypasses the JVM overhead, maximizing thermal stability and memory management during intensive image registration.
 
@@ -41,7 +45,7 @@ Heavy mathematical transformations are offloaded to native C++ via the Java Nati
 
 ---
 
-## 🧪 Computational Research & Future Enhancements
+## Computational Research & Future Enhancements
 
 To move past traditional 2012-era processing pipelines, this project explores several experimental computational enhancements:
 
@@ -62,19 +66,17 @@ A major flaw in classic stitching algorithms occurs when capturing the lowest po
 
 ```
 
-Our proposed research involves developing an automated semantic masking layer. By identifying ground-plane geometries and isolating user-proximate structures, the engine can implement a contextual background infill—similar to a localized "Magic Eraser"—to erase capture artifacts cleanly from the final ground layer.
+---
+
+## Computational Photography Pipeline
+
+ Utilizing ORB (Oriented FAST and Rotated BRIEF) to map robust keypoint pairs across overlapping viewports.
+**Homography Estimation:** Implementing RANSAC (Random Sample Consensus) to calculate optimal transformation matrices while discarding false structural matches.
+ Projecting flat planes onto cylindrical or spherical coordinates and executing multi-band seam-blending to erase exposure deltas across boundaries.
 
 ---
 
-## 🧠 Computational Photography Pipeline
-
-1. **Feature Detection & Matching:** Utilizing ORB (Oriented FAST and Rotated BRIEF) to map robust keypoint pairs across overlapping viewports.
-2. **Homography Estimation:** Implementing RANSAC (Random Sample Consensus) to calculate optimal transformation matrices while discarding false structural matches.
-3. **Warping & Multi-Band Blending:** Projecting flat planes onto cylindrical or spherical coordinates and executing multi-band seam-blending to erase exposure deltas across boundaries.
-
----
-
-## 📖 Digital Photography & Computer Vision Glossary
+## Digital Photography Glossary
 
 * **Dynamic Range:** The ratio between the maximum and minimum measurable light intensities (the brightest highlights and darkest shadows) captured within a single scene.
 * **Exposure Clipping:** A phenomenon where pixel values exceed the maximum capacity of the digital sensor, resulting in pure white areas (`255, 255, 255` RGB) stripped of all underlying structural detail.
